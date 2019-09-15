@@ -1,0 +1,12 @@
+<ul [ngClass]="{'list-group-item': true,
+                'list-group-item-success': post.IsLoved(),
+                'list-group-item-danger': post.IsHated()}">
+<h5>{{ post.title }}</h5>
+	<div style="float:right">
+	{{ post.created_at | date }}
+	</div>
+<p>
+	{{ post.content }}<p>
+<button (click)="post.onLove()" class="list-group-item-success">Love it</button>
+<button (click)="post.onHate()" class="list-group-item-danger">Hate it</button>
+</ul>
